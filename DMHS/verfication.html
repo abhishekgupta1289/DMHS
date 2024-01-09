@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Confirmation</title>
+    <style>
+        /* Advanced CSS for confirmation container */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .confirmation-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        #verifyBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #verifyBtn:hover {
+            background-color: #2980b9;
+        }
+        .loading-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 2s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
+        .tick-symbol {
+            font-size: 40px;
+            color: #27ae60;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Thank You for Registration</h2>
+        <p>Your registration is successful. We appreciate your contribution to improving our community.</p>
+        <button id="verifyBtn">Verify</button>
+        <div id="loadingContainer" class="loading-container hidden">
+            <div class="loader"></div>
+            <p>Verifying...</p>
+        </div>
+        <div id="tickSymbol" class="tick-symbol hidden">&#10004;</div>
+    </div>
+
+    <script src="confirmation_script.js"></script>
+</body>
+</html>

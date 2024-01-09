@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* Advanced CSS styles for the complaint form */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        textarea {
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #555;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        #photo {
+            display: none;
+        }
+        #photoLabel {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #photoLabel:hover {
+            background-color: #27ae60;
+        }
+        #photoPreview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        #photoPreview img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .location-group {
+            display: flex;
+            align-items: center;
+        }
+        #liveLocationBtn {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #liveLocationBtn:hover {
+            background-color: #2980b9;
+        }
+        #submitBtn {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #e74c3c;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        #submitBtn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    <div class="container">
+        <h2>Complaint Form</h2>
+        <form id="complaintForm">
+            <label for="photo">Photo Attachment:</label>
+            <div>
+                <label id="photoLabel" for="photo">Upload Photo</label>
+                <input type="file" id="photo" accept="image/*" capture="user">
+            </div>
+            <div id="photoPreview"></div>
+
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4" placeholder="Describe the issue"></textarea>
+
+            <div class="location-group">
+                <label for="location">Location:</label>
+                <button type="button" id="liveLocationBtn">Get Live Location</button>
+            </div>
+            <!-- Map implementation -->
+            <div id="map"></div>
+            <input type="hidden" id="latitude" name="latitude" />
+            <input type="hidden" id="longitude" name="longitude" />
+
+            <button type="button" id="submitBtn">Submit Complaint</button>
+        </form>
+    </div>
+
+    <script src="complaint_script.js"></script>
+</body>
+</html>
+       >
